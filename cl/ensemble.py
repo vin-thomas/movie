@@ -3,7 +3,7 @@ import openai
 import numpy as np
 from openai import OpenAI
 client = OpenAI()
-model = joblib.load("cl/ensemble.pkl")
+model = joblib.load("cl/ensemble_model.pkl")
 
 def embed(text, model="text-embedding-3-small"):
    text = text.replace("\n", " ")

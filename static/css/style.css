@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Leckerli+One&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Arial', sans-serif; */
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+}
+
+.header-div * {
+  font-family: "Leckerli One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-div {
+  background-color: white;
+  color: #0b5394;
+  font-size: 24px;
+  margin: 20px 15px 30px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-div h1{
+  margin: 0;
+}
+
+
+.logo {
+  width: calc(2.1rem + 1.1vw);
+}
+
+.logout * {
+  font-family: "PT Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.logout {
+  text-align: right;
+}
+
+.logout a {
+  text-decoration: none;
+  color: #0b5394;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .logout a {
+    font-size: 10px;
+  }
+}
+
+main {
+    width: 60%;
+    margin: 30px auto;
+}
+
+@media screen and (max-width: 1300px) {
+  main{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main{
+    width: 90%;
+  }
+}
+
+.box1-container {
+  width: 100%;
+  height: 50vh;
+  margin: 10px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.box2-container {
+  width: 100%;
+  margin: 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.box2-container p {
+  color: grey;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+  font-size: medium;
+  border: 1px solid;
+  border-color: transparent transparent lightgrey transparent;
+}
+
+p {
+  margin-top: 10px;
+  font-size: small;
+  line-height: 2;
+}
+
+.alert-container {
+  position: absolute;
+  top: 10%;
+  left: 68%;
+}
+
+
+.toolbar {
+  margin: 0 auto;
+  width: fit-content;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.classifications {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+#submitbtn {
+  background-color: #0b5394;
+  color: #fff;
+  padding: 7px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  max-width: 7em;
+  transition: color 0.7s ease, background-color 0.2s ease;
+}
+
+#submitbtn:hover {
+  background-color: rgb(255, 255, 255);
+  color: #0b5394;
+}
+
+#submitbtn:focus {
+  border: none;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 1px;
+  width: 1px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #dfe9eb;
+  border: 10px dotted #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: black;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: lightgrey;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: grey;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: grey;
+}
+
+
+#loader_container {
+  position: absolute;
+  width: 100%;
+  bottom: 13.5px;
+  left: 0;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.loader {
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  position: relative;
+  background: rgba(201, 201, 201, 0);
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: 192px;
+  height: 2px;
+  background: #0b5394;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+    
+
+#output {
+  position: absolute;
+  bottom: 30px;
+  right: 45px;
+  /* transform: translate(50%, 50%); */
+}
+
+.fade-text {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-text.fade-in {
+  opacity: .3;
+  text-align: center;
+}
+
+
+.fade-text div {
+  font-size: 2rem;
+  background: #ffffffab;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 7px;
+}
+
+.accordion-button:hover {
+  color: white;
+  background-color: #0b5394;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.actionbtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #dcdbff;
+}

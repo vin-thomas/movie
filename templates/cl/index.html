@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Filmfavor | deepblue</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/tsparticles.confetti.bundle.min.js'%}"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-div">
+        <div class="col-1">
+          <div class="logo">
+            <img src="{% static 'imgs/logo1.svg' %}" alt="deepblue logo"/>
+          </div>
+        </div>
+        <div><h1>Filmfavor</h1></div> 
+        {% if user.is_authenticated %}
+        <div class="col-1 logout">
+            <a href="{% url 'users:logout' %}">Logout</a>
+          </div>
+        {% endif %}
+      </div>
+    </header>
+    <main>
+      <form id="predict_form" novalidate>
+        {% csrf_token %}
+        <div class="parent-container">
+          <div class="box1-container">
+            <div id="loader_container"></div>
+            <textarea
+              id="input_textarea"
+              name="text"
+              placeholder="enter your movie plot...."
+            ></textarea>
+            <div id="output"></div>
+          </div>
+          <div class="box2-container" id="similar_movies">
+            <div
+              class="accordion accordion-flush"
+              id="accordionPanelsStayOpenExample"
+            ></div>
+          </div>
+        </div>
+        <div class="actionbtn">
+          <div class="toolbar row justify-content-around align-items-center">
+            <div class="col-md-auto p-0 d-flex justify-content-center">
+              <button type="submit" id="submitbtn">Predict</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    const hobURL = "{% url 'cl:hob' %}";
+    const similarURL = "{% url 'cl:similar' %}";
+    const csrf_token = document.getElementsByName("csrfmiddlewaretoken")[0]
+      .value;
+  </script>
+</html>

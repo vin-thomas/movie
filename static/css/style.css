@@ -274,6 +274,13 @@ p {
   right: 25px;
 }
 
+
 .accordion-button:not(.collapsed) {
-  background-color: #dcdbff;
+  color: #fcfcfc;
+  background-color: #0b5394;
+}
+
+.accordion-button:not(.collapsed):hover {
+  color: #0b5394;
+  background-color: #fcfcfc;
 }

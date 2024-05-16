@@ -1,5 +1,4 @@
 import joblib
-import openai
 import numpy as np
 from openai import OpenAI
 client = OpenAI()

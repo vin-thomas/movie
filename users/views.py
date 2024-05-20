@@ -10,7 +10,7 @@ from datetime import datetime
 # Create your views here.
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('app:index')
+        return redirect('cl:index')
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')

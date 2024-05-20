@@ -27,36 +27,66 @@
       </div>
     </header>
     <main>
-      <form id="predict_form" novalidate>
-        {% csrf_token %}
-        <div class="parent-container">
+      <div class="parent-container">
+        <form id="predict_form" novalidate>
+          <div class="actionbtn2">
+            <button type="submit" id="submitbtn2">Predict</button>
+          </div>
+          {% csrf_token %}
+          <div class="grid">
           <div class="box1-container">
             <div id="loader_container"></div>
+            <!-- <div class="grow-wrap"> -->
             <textarea
               id="input_textarea"
               name="text"
               placeholder="enter your movie plot...."
             ></textarea>
-            <div id="output"></div>
+          <!-- </div> -->
+          <div id="output"></div>
+        </div>
+        <div class="actionbtn1">
+          <button type="submit" id="submitbtn1">Predict</button>
+        </div>
+      </div>
+    </form>
+        <div class="box2-container" id="similar_movies">
+          <div class="headingsim">
+            <div>
+              <span>Similar movies</span>
+              <div class="clco">
+              <div class="clearbtn">
+                <button type="button" id="clearbtn">Clear</button>
+              </div>
+            <button>
+              <svg id="collapse-all" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11"/>
+              </svg>
+            </button>
           </div>
-          <div class="box2-container" id="similar_movies">
+        </div>
+        </div>
             <div
               class="accordion accordion-flush"
               id="accordionPanelsStayOpenExample"
             ></div>
           </div>
-        </div>
-        <div class="actionbtn">
-              <button type="submit" id="submitbtn">Predict</button>
-        </div>
-      </form>
+      </div>
     </main>
+    <div id="alert-container"></div>
   </body>
+  <style>
+    :root {
+    --var-caret-up: "{% static 'imgs/caret-up.svg' %}";
+    --var-caret-down: "{% static 'imgs/caret-down.svg' %}";
+  }
+  </style>
+  <script src="{% static 'js/autosize.js' %}"></script>
   <script src="{% static 'js/script.js' %}"></script>
   <script>
     const hobURL = "{% url 'cl:hob' %}";
     const similarURL = "{% url 'cl:similar' %}";
-    const csrf_token = document.getElementsByName("csrfmiddlewaretoken")[0]
+    const csrftoken = document.getElementsByName("csrfmiddlewaretoken")[0]
       .value;
   </script>
 </html>

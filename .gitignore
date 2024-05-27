@@ -15,6 +15,7 @@ tests/report/
 tests/screenshots/
 /*.sqlite3
 /*.log
+.env
 
 movie-vectordb
 cl/ensemble_model.pkl

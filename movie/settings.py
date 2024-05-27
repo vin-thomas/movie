@@ -20,13 +20,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k@r)1i^$(^(4exa%7a*c0d-3%@85bwhp_fpbu&$^r$-_b(zf-j'
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["35.225.111.0", "movies.deepblueai.in"]
 
 # Application definition
 
@@ -119,6 +124,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static', ]
+
+STATIC_ROOT = "/home/moadmin/static"
 
 LOGIN_URL = '/account/login'
 

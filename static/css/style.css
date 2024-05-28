@@ -158,12 +158,16 @@ button[type="submit"] {
   font-size: 16px;
   max-width: 7em;
   opacity: 1;
-  transition: color 0.7s ease, background-color 0.2s ease;
+  transition: color 0.3s ease, background-color 0.2s ease;
 }
 
 button[type="submit"]:hover {
+  color: #dfdfdf;
+}
+
+button[type="submit"]:active {
   background-color: rgb(255, 255, 255);
-  color: #0b5394;
+  color: #1b5394;
 }
 
 button[type="submit"]:focus {
